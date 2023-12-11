@@ -1,0 +1,8 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="row">
+    <div class="col-md-4 col-12" *ngFor="let livre of livres">
+        <app-card-livre [childInput]="livre"></app-card-livre>
+    </div>
+    <app-pagination [currentPage]="currentPage" [pageSize]="pageSize" [totalItems]="totalItems"
+        (pageChange)="loadData($event)"></app-pagination>
+</div>

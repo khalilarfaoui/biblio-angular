@@ -1,18 +1,24 @@
 <div id="viewport">
     <div id="sidebar">
-        <header>
-            <a><i class="bi bi-book"></i> Xpress</a>
+        <header style="display: flex; justify-content: space-between;">
+            <div>
+                <button class="btn btn-outline-light only-mobile" style="border-radius: 30px;" (click)="show()"> <i
+                    class="bi " [ngClass]="{'bi-arrow-down' :display ,'bi-arrow-up' :!display  }"></i> </button>
+            </div>
+            <div>
+                <a><i class="bi bi-book"></i> Xpress</a>
+            </div>
+            <div>
+                <app-button-logout class="only-mobile" [childInput]="'btn btn-outline-light'"></app-button-logout>
+            </div>
+
         </header>
-        <ul class="list-group nav">
-            <li class="list-group-item " style="cursor: pointer;">item1</li>
-            <li class="list-group-item " style="cursor: pointer;">item2</li>
-            <li class="list-group-item " style="cursor: pointer;">item3</li>
-
-        </ul>
-
+        <app-sidebar-menu [ngClass]="{'only-mobile': !display, 'only-pc': display}"></app-sidebar-menu>
     </div>
     <div id="content">
-        <app-navbar></app-navbar>
-        <router-outlet></router-outlet>
+        <app-navbar class="only-pc"></app-navbar>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
