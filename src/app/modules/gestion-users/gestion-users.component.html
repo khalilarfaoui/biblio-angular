@@ -1,0 +1,23 @@
+<h2>Gestion users</h2>
+<button class="btn btn-dark" >+ Add</button>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of users">
+            <td>{{i.username}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.authorities}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete()">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -5,6 +5,9 @@
         <h5 class="card-title">{{childInput.titre}}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p *ngIf="action=='reserve'">Ce livre sera disponible <strong *ngIf="empruntData">{{empruntData[0]?.dateFin}}</strong></p>
+            <p *ngIf="action=='emprunt'">Ce livre est disponible</p>
+        <a *ngIf="action=='emprunt'" (click)="emprunt(childInput.idLivre , 'emprunt')" class="btn btn-dark">Emprunter</a>
+        <a *ngIf="action=='reserve'" (click)="emprunt(childInput.idLivre , 'reserve')" class="btn btn-dark">Reservé</a>
     </div>
 </div>

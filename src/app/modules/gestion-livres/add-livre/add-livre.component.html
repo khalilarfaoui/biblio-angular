@@ -1,0 +1,56 @@
+<!-- livre-form.component.html -->
+<div style="padding: 30px; background-color: gainsboro;" >
+  <form >
+    <h2>ADD</h2>
+    <div class="form-group">
+      <label for="titre">Titre</label>
+      <input type="text" class="form-control" id="titre" [(ngModel)]="livre.titre" name="titre" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="auteur">Auteur</label>
+      <input type="text" class="form-control" id="auteur" [(ngModel)]="livre.auteur" name="auteur" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="dateDePublication">Date de Publication</label>
+      <input type="date" class="form-control" id="dateDePublication" [(ngModel)]="livre.dateDePublication" name="dateDePublication" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input type="text" class="form-control" id="isbn" [(ngModel)]="livre.ISBN" name="ISBN" required>
+    </div>
+
+    <div class="form-group">
+        <label for="isbn">Format Livre</label>
+
+        <select class="form-select form-select-lg mb-3" name="formatLivre" [(ngModel)]="livre.formatLivre"  aria-label="Large select example">
+            
+            <option *ngFor="let i of formatLivre" [value]="i">{{i}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="isbn">Genre Livre</label>
+
+        <select class="form-select form-select-lg mb-3" name="genreLivre" [(ngModel)]="livre.genreLivre"  aria-label="Large select example">
+            
+            <option *ngFor="let i of genreLivre" [value]="i">{{i}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="isbn">Public Cible</label>
+
+        <select class="form-select form-select-lg mb-3" name="publicCible" [(ngModel)]="livre.publicCible"  aria-label="Large select example">
+            
+            <option *ngFor="let i of publicCible" [value]="i">{{i}}</option>
+        </select>
+    </div>
+  
+    <!-- Ajoutez d'autres champs en fonction de votre modèle Livre -->
+  
+    <button type="submit" class="btn btn-dark" style="width: 100%;" (click)="onSubmit()">Enregistrer</button>
+  </form>
+</div>
+
+  

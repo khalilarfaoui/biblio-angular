@@ -4,14 +4,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" ><i class="bi bi-person-circle"></i> Khalil Arfaoui</a>
+            <a class="nav-link" aria-current="page" ><i class="bi bi-person-circle"></i> {{user?.principal.email}}</a>
           </li>
          
           
         
         </ul>
         <form class="d-flex" >
-            <app-button-logout [childInput]="'btn btn-outline-dark'"></app-button-logout>
+            <app-button-logout [childInput]="'btn btn-outline-dark'" (click)="logout()"></app-button-logout>
         </form>
       </div>
     </div>

@@ -1,0 +1,26 @@
+/* date-form.component.css */
+.card {
+
+    
+    /* Center the card on the page */
+    background-color: #f8f9fa;
+    /* Set your desired background color */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #343a40;
+    /* Set the title color */
+}
+
+label{
+    font-weight: bold;
+
+}
+.form-group{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

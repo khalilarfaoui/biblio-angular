@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a style="font-size: 20px; font-weight: bold; "><i class="bi bi-book"></i> Xpress</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+              
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container ">
+    <form class="p-4 shadow bg-light" style="width: 25rem;">
+        <h2 class="mb-4" style="text-align: center;">REGISTER</h2>
+        <div class="form-group">
+            <label for="username"><i class="bi bi-person"></i> Nom</label>
+            <input type="text" class="form-control" id="username"  required>
+        </div>
+        <div class="form-group">
+            <label for="username"><i class="bi bi-person"></i> Prenom</label>
+            <input type="text" class="form-control" id="username"  required>
+        </div>
+        <div class="form-group">
+            <label for="username"><i class="bi bi-person"></i> Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="username"><i class="bi bi-envelope"></i> Email</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password"><i class="bi bi-incognito"></i> Password</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="password"><i class="bi bi-incognito"></i> Confirm</label>
+            <input type="password" class="form-control" id="password"  required>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="register()">register <i class="bi bi-indent"></i></button>
+    </form>
+</div>

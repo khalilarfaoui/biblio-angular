@@ -1,0 +1,4 @@
+<select class="form-select form-select-lg mb-3" [(ngModel)]="filter" (change)="selected()" aria-label="Large select example">
+    <option selected>{{taxtPlaceholder}}</option>
+    <option *ngFor="let i of listType" [value]="i">{{i}}</option>
+</select>

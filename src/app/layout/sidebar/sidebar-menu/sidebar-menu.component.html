@@ -1,5 +1,12 @@
 <ul class="list-group nav">
-    <li class="list-group-item " style="cursor: pointer;">Livres</li>
-    <li class="list-group-item " style="cursor: pointer;">item2</li>
-    <li class="list-group-item " style="cursor: pointer;">item3</li>
+    <li class="list-group-item " *ngIf="role == 'ADMIN'" (click)="goTo('dashboard')" style="cursor: pointer;">Dashboard</li>
+
+    <li class="list-group-item " *ngIf="role == 'CLIENT'" (click)="goTo('livres')" style="cursor: pointer;">Livres</li>
+    <li class="list-group-item " *ngIf="role == 'CLIENT'" (click)="goTo('reservations')" style="cursor: pointer;">Reservations</li>
+    <li class="list-group-item " *ngIf="role == 'ADMIN'" (click)="goTo('gestion-livres')" style="cursor: pointer;">Gestion-livres</li>
+    <li class="list-group-item " *ngIf="role == 'ADMIN'" (click)="goTo('gestion-users')" style="cursor: pointer;">Gestion-users</li>
+    <li class="list-group-item " *ngIf="role == 'CLIENT'" (click)="goTo('mes-emprunts')" style="cursor: pointer;">Mes-emprunts</li>
+    <li class="list-group-item " *ngIf="role == 'ADMIN'" (click)="goTo('verify')" style="cursor: pointer;">Vérification</li>
+
+
 </ul>

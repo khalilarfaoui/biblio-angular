@@ -1,0 +1,54 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="row">
+    <div class="col-md-3 col-12">
+        <app-select (selectChange)="filterMethode($event)" [listType]="publicCible"
+            [taxtPlaceholder]="'Public Cible'"></app-select>
+    </div>
+    <div class="col-md-3 col-12">
+        <app-select [listType]="genreLivre" (selectChange)="filterMethode($event)"
+            [taxtPlaceholder]="'Genre Livre'"></app-select>
+    </div>
+    <div class="col-md-3 col-12">
+        <app-select [listType]="formatLivre" (selectChange)="filterMethode($event)"
+            [taxtPlaceholder]="'Format Livre'"></app-select>
+    </div>
+    <div class="col-md-3 col-12">
+        <button class="btn btn-outline-dark" (click)="search()"><i class="bi bi-search"></i> Search</button>
+    </div>
+
+</div>
+<div>
+    <i>Total Livres : {{livres?.length}} </i>
+</div>
+<div>
+    <button class="btn btn-dark" (click)="add()">Add</button>
+
+</div>
+<div class="row mt-3">
+    <table class="table" style="margin: 20px;">
+        <thead class="table-dark">
+            <tr>
+                <th>Titre</th>
+                <th>Autheur</th>
+                <th>Genre</th>
+                <th>Format</th>
+                <th>Public cible</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of livres">
+                <td>{{i.titre}}</td>
+                <td>{{i.auteur}}</td>
+                <td>{{i.genreLivre}}</td>
+                <td>{{i.formatLivre}}</td>
+                <td>{{i.publicCible}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="edit(i.idLivre)">Edit</button>
+                    <button class="btn btn-danger" (click)="delete(i.idLivre)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,40 @@
+<app-breadcrumb></app-breadcrumb>
+<div class="row mt-3">
+    <div class="col-md-4 col-12" *ngIf="livre">
+        <app-card-livre [childInput]="livre" [action]="'false'"></app-card-livre>
+
+
+    </div>
+   
+    <div class="col-md-8 col-12">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Reservations Form</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="dateDebut">Date Début:</label>
+                        <input type="date" class="form-control" id="dateDebut" [(ngModel)]="rev.dateDebut"
+                            name="dateDebut">
+                    </div>
+                    <div class="form-group">
+                        <label for="dateFin">Date Fin:</label>
+                        <input type="date" class="form-control" id="dateFin" [(ngModel)]="rev.dateFin" name="dateFin">
+                    </div>
+
+                    <button type="button" class="btn btn-dark" (click)="submitForm()">Reserveé</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+        
+

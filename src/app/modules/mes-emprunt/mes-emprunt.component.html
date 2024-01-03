@@ -1,0 +1,31 @@
+<app-breadcrumb></app-breadcrumb>
+
+<div class="row mt-3">
+    <table class="table" style="margin: 20px;">
+        <thead class="table-dark">
+            <tr>
+                <th>Code</th>
+                <th>Titre</th>
+                <th>Autheur</th>
+                <th>Genre</th>
+                <th>Format</th>
+                <th>Public cible</th>
+                <th>Date de retour</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of livres">
+                <td style="color: blue;">{{i.code}}</td>
+                <td>{{i.livre.titre}}</td>
+                <td>{{i.livre.auteur}}</td>
+                <td>{{i.livre.genreLivre}}</td>
+                <td>{{i.livre.formatLivre}}</td>
+                <td>{{i.livre.publicCible}}</td>
+                <td style="color: red; font-weight: bold;">{{i.dateFin}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+

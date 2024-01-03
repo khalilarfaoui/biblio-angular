@@ -8,30 +8,71 @@ import { LivresService } from 'src/app/services/livres.service';
   styleUrls: ['./livres.component.css']
 })
 export class LivresComponent implements OnInit {
-  livres : any
-  currentPage = 1;
-  pageSize = 3;
-  totalItems = 100;
+  livres: any
+  
+  formatLivre: any;
+  genreLivre: any;
+  publicCible: any;
+  detailsTabla :any;
+  filtredFormatLivre : any 
+  filtredGenreLivre : any 
+  filtredPublicCible : any 
   constructor(
-    private livresService : LivresService
-  ){}
+    private livresService: LivresService
+  ) { }
   ngOnInit(): void {
     this.getLivres()
+    this.getFormatLivre()
+    this.getGenreLivre()
+    this.getPublicCible()
   }
 
   getLivres() {
-    this.livresService.get(this.currentPage-1, this.pageSize).subscribe(res=>{
-      this.livres = res.content; 
-      this.totalItems = res.totalElements;
-      console.log("getLivres" ,this.livres )
-      console.log("totalItems" ,this.totalItems )
+    this.livresService.getLivreNonEmprunte().subscribe(res => {
+      this.livres = res;
+      console.log(this.livres)
+      
     })
   }
 
-  loadData(page: number) {
-    console.log("loadData",page)
-    this.currentPage = page;
-    this.getLivres();
+
+  filterMethode(filter: any) {
+    console.log("publicCibleFilter", filter)
+    if(filter.for === 'Public Cible'){
+      this.filtredPublicCible = filter.filter
+    }
+    if(filter.for === 'Genre Livre'){
+      this.filtredGenreLivre = filter.filter
+    }
+    if(filter.for === 'Format Livre'){
+      this.filtredFormatLivre = filter.filter
+    }
+  }
+
+  search(){
+    console.log("filtredPublicCible"+this.filtredPublicCible , "filtredGenreLivre"+this.filtredGenreLivre ,  "filtredFormatLivre"+this.filtredFormatLivre)
+    this.livresService.filteredLivre(this.filtredFormatLivre , this.filtredPublicCible ,this.filtredGenreLivre).subscribe(res=>{
+      this.livres = res
+    })
+  }
+
+  getFormatLivre() {
+    this.livresService.getFormatLivre().subscribe(res => {
+      this.formatLivre = res
+    })
+  }
+  
+  getGenreLivre() {
+    this.livresService.getGenreLivre().subscribe(res => {
+      this.genreLivre = res
+    })
+  }
+
+  getPublicCible() {
+    this.livresService.getPublicCible().subscribe(res => {
+      this.publicCible = res
+
+    })
   }
 
 }

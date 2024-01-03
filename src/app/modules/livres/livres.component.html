@@ -1,8 +1,25 @@
 <app-breadcrumb></app-breadcrumb>
 <div class="row">
-    <div class="col-md-4 col-12" *ngFor="let livre of livres">
-        <app-card-livre [childInput]="livre"></app-card-livre>
+    <div class="col-md-3 col-12">
+        <app-select (selectChange)="filterMethode($event)" [listType]="publicCible" [taxtPlaceholder]="'Public Cible'"></app-select>
     </div>
-    <app-pagination [currentPage]="currentPage" [pageSize]="pageSize" [totalItems]="totalItems"
-        (pageChange)="loadData($event)"></app-pagination>
+    <div class="col-md-3 col-12">
+        <app-select [listType]="genreLivre" (selectChange)="filterMethode($event)"  [taxtPlaceholder]="'Genre Livre'"></app-select>
+    </div>
+    <div class="col-md-3 col-12">
+        <app-select [listType]="formatLivre" (selectChange)="filterMethode($event)" [taxtPlaceholder]="'Format Livre'"></app-select>
+    </div>
+    <div class="col-md-3 col-12">
+        <button class="btn btn-outline-dark" (click)="search()"><i class="bi bi-search"></i> Search</button>
+    </div>
+
+</div>
+<div>
+    <i>Total Livres : {{livres?.length}} </i>
+</div>
+<div class="row mt-3">
+    <div class="col-md-4 col-12" *ngFor="let livre of livres">
+        <app-card-livre [childInput]="livre" [action]="'emprunt'"></app-card-livre>
+    </div>
+  
 </div>

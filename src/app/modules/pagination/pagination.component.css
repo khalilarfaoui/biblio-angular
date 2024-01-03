@@ -2,3 +2,9 @@
     justify-content: center;
     margin-top: 20px;
 }
+
+.page-link{
+    cursor: pointer;
+    font-weight: bold;
+    color: #263238;
+}

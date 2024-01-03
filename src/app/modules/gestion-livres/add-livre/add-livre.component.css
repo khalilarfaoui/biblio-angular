@@ -1,0 +1,41 @@
+label{
+    font-weight: bold;
+}
+
+/* styles.css (ou styles.scss) */
+
+/* Style pour le formulaire */
+form {
+    max-width: 500px; /* Ajustez la largeur maximale selon vos besoins */
+    margin: auto;
+}
+
+/* Style pour les étiquettes */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+/* Style pour le bouton d'enregistrement */
+button {
+    background-color: #343a40; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #23272b; /* Couleur de fond du bouton au survol */
+}
